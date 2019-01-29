@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "preserveConstEnums": true,
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        // "strictBindCallApply": true,
+        // "strictFunctionTypes": true,
+        // "strictPropertyInitialization": true,
+        // "strictNullChecks": true,
+        // "noImplicitAny": true,
+        // // "noUnusedLocals": true,
+        // // "noUnusedParameters": true,
+        // "noImplicitReturns": true,
+        // "noImplicitThis": true
+    },
+    "include": ["."],
+    "exclude": ["node_modules"]
+}
