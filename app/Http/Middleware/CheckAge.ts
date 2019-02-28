@@ -3,7 +3,6 @@ import { Request } from "@fortifico/framework/http/Request";
 
 export class CheckAge
 {
-
     public handle(request: Request, next: Closure)
     {
 

@@ -1,20 +1,16 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es2017",
         "module": "commonjs",
-        "preserveConstEnums": true,
-        "declaration": true,
+        "lib": ["es2017"],
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        // "strictBindCallApply": true,
-        // "strictFunctionTypes": true,
-        // "strictPropertyInitialization": true,
-        // "strictNullChecks": true,
-        // "noImplicitAny": true,
-        // // "noUnusedLocals": true,
-        // // "noUnusedParameters": true,
-        // "noImplicitReturns": true,
-        // "noImplicitThis": true
+        "strict": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "preserveConstEnums": true,
+        "sourceMap": true
     },
     "include": ["."],
     "exclude": ["node_modules"]

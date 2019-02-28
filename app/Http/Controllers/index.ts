@@ -8,6 +8,6 @@
 |
 */
 
-export { HomeController } from "./HomeController";
-
 export { ExampleController } from "./ExampleController"
+
+export { HomeController } from "./HomeController";

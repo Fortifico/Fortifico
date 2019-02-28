@@ -1,7 +1,9 @@
+import { view } from "@fortifico/framework/helpers"
 import { Controller } from "@fortifico/framework/routing/Controller";
-import { Application as App } from "@fortifico/framework/Application";
+import { Inject, Injectable } from "@fortifico/framework/container/Injection";
 
-@App.Class
+
+@Injectable
 export class HomeController extends Controller
 {
 
@@ -10,9 +12,9 @@ export class HomeController extends Controller
         super()
     }
     
-    @App.Method
-    public index(): string
+    @Inject
+    public index(date: Date)
     {
-        return "Hello";
+        return view("home");
     }
 }

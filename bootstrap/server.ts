@@ -1,10 +1,10 @@
 import * as http from "http";
-import { bootstrap } from "../bootstrap/app";
+import { bootstrap } from "./app";
 import { IncomingMessage, ServerResponse } from "http";
 
 function requestHandler(serverRequest: IncomingMessage, serverResponse: ServerResponse): void
 {
-    
+    app;
 }
 
 let app = bootstrap();
