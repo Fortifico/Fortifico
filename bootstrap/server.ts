@@ -4,9 +4,11 @@ import { IncomingMessage, ServerResponse } from "http";
 
 function requestHandler(serverRequest: IncomingMessage, serverResponse: ServerResponse): void
 {
-    app;
+    
 }
 
 let app = bootstrap();
+app.start();
+
 let server = http.createServer(requestHandler);
-server.listen(8080);
+server.listen(1230);
