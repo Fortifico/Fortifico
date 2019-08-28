@@ -1,6 +1,6 @@
-import { view } from "@fortifico/framework/helpers"
-import { Controller } from "@fortifico/framework/routing/Controller";
-import { Inject } from "@fortifico/framework/container/Injection";
+import { view } from "@fortifico/framework/modules/Helpers"
+import { Controller } from "@fortifico/framework/modules/Routing/Controller";
+import { Inject } from "@fortifico/framework/modules/Container/Injection";
 
 
 export class HomeController extends Controller

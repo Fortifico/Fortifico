@@ -8,7 +8,7 @@
         "strict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
         "preserveConstEnums": true,
         "sourceMap": true
     },

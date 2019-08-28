@@ -1,4 +1,4 @@
-import { Router } from "@fortifico/framework/modules/routing/Router";
+import { Router } from "@fortifico/framework/modules/Routing/Router";
 
 /*
 |--------------------------------------------------------------------------

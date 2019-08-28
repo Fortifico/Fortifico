@@ -1,4 +1,4 @@
-import { Controller } from "@fortifico/framework/routing/Controller";
+import { Controller } from "@fortifico/framework/modules/Routing/Controller";
 
 export class ExampleController extends Controller
 {
