@@ -2,10 +2,10 @@
   "name": "@fortifico/fortifico",
   "version": "0.1.0",
   "description": "The Fortifico Framework.",
+  "type": "modules",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
-    "start": "node ./public/index.js"
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -14,13 +14,14 @@
   "keywords": [],
   "author": "DamenH",
   "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {
-    "@fortifico/framework": "file:../framework",
+  "devDependencies": {
     "@types/node": "^10.12.18"
   },
-  "bugs": {
-    "url": "https://github.com/DamenH/fortis/issues"
+  "dependencies": {
+    "@fortifico/framework": "file:../framework"
   },
-  "homepage": "https://github.com/DamenH/fortis#readme"
+  "bugs": {
+    "url": "https://github.com/fortifico/fortifico/issues"
+  },
+  "homepage": "https://github.com/fortifico/fortifico"
 }
