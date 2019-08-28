@@ -1,7 +1,7 @@
 import * as http from "http";
-import { web } from "../routes";
+import { web } from "./routes";
 import { IncomingMessage, ServerResponse } from "http";
-import * as Controllers from "../app/Http/Controllers";
+import * as Controllers from "./app/Http/Controllers";
 import { Router } from "@fortifico/framework/modules/Routing/Router";
 import { Application } from "@fortifico/framework/modules/Application";
 
