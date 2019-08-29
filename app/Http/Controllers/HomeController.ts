@@ -1,6 +1,5 @@
 import { view } from "@fortifico/framework/modules/Helpers"
 import { Controller } from "@fortifico/framework/modules/Routing/Controller";
-import { Inject } from "@fortifico/framework/modules/Container/Injection";
 
 
 export class HomeController extends Controller
@@ -11,9 +10,8 @@ export class HomeController extends Controller
         super()
     }
     
-    @Inject
-    public index(date: Date)
+    public index()
     {
-        return view("home");
+        return view("home").with([1, 2, 3, 4]);
     }
 }
