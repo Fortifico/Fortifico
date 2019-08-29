@@ -1,18 +1,12 @@
 import { Router } from "@fortifico/framework/modules/Routing/Router";
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+import { view } from "@fortifico/framework/modules/Helpers";
 
 export function web(router: Router): void
 {
     router.get("/", "HomeController@index");
-    router.get("/example", "ExampleController@index");
+    router.get("/dates", "DateController@index");
+    
+    router.get('/about', (dates: Date) => {
+        return view('about').with(dates);
+    });
 }
