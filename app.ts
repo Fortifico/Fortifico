@@ -21,7 +21,7 @@ function bootstrap(): Application
 {
     let app = new Application();
 
-    app.router.group([Controllers], (router: Router) => web)
+    app.router.group([Controllers], web)
 
     app.bind("HttpKernel", () => { return new Kernel(app, app.router) })
 

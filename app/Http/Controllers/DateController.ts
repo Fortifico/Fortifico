@@ -13,7 +13,7 @@ export class DateController extends Controller
     }
 
     @App.Inject
-    index(dates: Date): View
+    index(dates: Date[]): View
     {
         return view("dates").with(dates);
     }
