@@ -10,6 +10,4 @@ export function web(router: Router)
     router.get('/about', (dates: Date[]) => {
         return view('about').with(dates);
     });
-
-    console.log(router)
 }

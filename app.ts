@@ -4,7 +4,7 @@ import { Kernel } from "./app/Http/Kernel";
 import * as Controllers from "./app/Http/Controllers";
 import { IncomingMessage, ServerResponse } from "http";
 import { Router } from "@fortifico/framework/modules/Routing/Router";
-import { Application } from "@fortifico/framework/modules/Application";
+import { Application as App } from "@fortifico/framework/modules/Application";
 
 
 function requestHandler(request: IncomingMessage, serverResponse: ServerResponse)
@@ -17,9 +17,9 @@ function requestHandler(request: IncomingMessage, serverResponse: ServerResponse
 
 }
 
-function bootstrap(): Application
+function bootstrap(): App
 {
-    let app = new Application();
+    let app = new App();
 
     app.router.group([Controllers], web)
 
