@@ -5,6 +5,7 @@ import * as Controllers from "./app/Http/Controllers";
 import { IncomingMessage, ServerResponse } from "http";
 import { Router } from "@fortifico/framework/modules/Routing/Router";
 import { Application as App } from "@fortifico/framework/modules/Application";
+import { ClassConstructor, ImportMap, Attributes } from "@fortifico/framework/modules/Interfaces/Types";
 
 
 function requestHandler(request: IncomingMessage, serverResponse: ServerResponse)
@@ -21,7 +22,25 @@ function bootstrap(): App
 {
     let app = new App();
 
-    app.router.group([Controllers], web)
+    
+
+    let iCont: ImportMap = { ...Controllers };
+    let controllersMap: Map<string, ClassConstructor> = new Map();
+
+    let attributes: Attributes = new Map();
+
+    for(let controllers in Controllers)
+    {
+        let func = iCont[controllers];
+        if(func)
+        {
+            controllersMap.set(controllers, func);
+        }
+        attributes.set(controllers, controllers);
+        
+    }
+
+    app.router.group(attributes, web)
 
     app.bind("HttpKernel", () => { return new Kernel(app, app.router) })
 
