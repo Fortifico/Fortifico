@@ -10,11 +10,14 @@ import { ClassConstructor, ImportMap, Attributes } from "@fortifico/framework/mo
 
 function requestHandler(request: IncomingMessage, serverResponse: ServerResponse)
 {
-    let kernel: Kernel = app.make("HttpKernel");
-    let response = kernel.handle(request)
 
-    serverResponse.writeHead(200, { 'Content-Type': 'text/html' });
-    serverResponse.end(response, 'utf-8');
+    let kernel: Kernel | null = app.make<Kernel>("HttpKernel");
+    if (kernel)
+    {
+        let response = kernel.handle(request)
+        serverResponse.writeHead(200, { 'Content-Type': 'text/html' });
+        serverResponse.end(response, 'utf-8');
+    }
 
 }
 
@@ -22,23 +25,25 @@ function bootstrap(): App
 {
     let app = new App();
 
-    
-
     let iCont: ImportMap = { ...Controllers };
-    let controllersMap: Map<string, ClassConstructor> = new Map();
+    //let controllersMap: Map<string, ClassConstructor> = new Map();
+
+    // for(let controllers in Controllers)
+    // {
+    //     let func = iCont[controllers];
+    //     if(func)
+    //     {
+    //         app.bind(controllers, () => new func )
+    //     }
+
+    // }
+
+    //console.log(app);
 
     let attributes: Attributes = new Map();
 
-    for(let controllers in Controllers)
-    {
-        let func = iCont[controllers];
-        if(func)
-        {
-            controllersMap.set(controllers, func);
-        }
-        attributes.set(controllers, controllers);
-        
-    }
+    // IDK what this does.
+    attributes.set("namespace", "App\\Http\\Controllers");
 
     app.router.group(attributes, web)
 
@@ -50,6 +55,9 @@ function bootstrap(): App
 let app = bootstrap();
 app.start();
 
+
 let server = http.createServer(requestHandler);
 server.listen(1230);
+
+
 
