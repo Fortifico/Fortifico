@@ -25,18 +25,17 @@ function bootstrap(): App
 {
     let app = new App();
 
-    let iCont: ImportMap = { ...Controllers };
-    //let controllersMap: Map<string, ClassConstructor> = new Map();
+    let controllers: ImportMap = { ...Controllers };
 
-    // for(let controllers in Controllers)
-    // {
-    //     let func = iCont[controllers];
-    //     if(func)
-    //     {
-    //         app.bind(controllers, () => new func )
-    //     }
+    for(let controller in Controllers)
+    {
+        let func  = controllers[controller];
+        if(func)
+        {
+            app.bind(controller, () => new func )
+        }
 
-    // }
+    }
 
     //console.log(app);
 
